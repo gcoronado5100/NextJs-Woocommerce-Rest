@@ -2,9 +2,13 @@ import Head from "next/head";
 import Link from "next/link";
 import { Bag, BurgerIcon, User, Wishlist } from "../../icons";
 import { isEmpty } from "lodash";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../context";
 
 const Header = ({ header }) => {
+
+  const [ cart, setCart ] = useContext( AppContext )
+
   const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle, favicon } =
     header || {};
 
@@ -26,6 +30,7 @@ const Header = ({ header }) => {
                 {siteLogoUrl ? (
                   <img
                     className='mr-2'
+                    style={{height: '4rem'}}
                     src={siteLogoUrl}
                     alt={`${siteTitle} logo`}
                     // width='86'
@@ -102,7 +107,7 @@ const Header = ({ header }) => {
                     <Bag className='mr-1 lg:mr-0' />
                     <span className='ml-1'>
                       Bag
-                      {/* {cart?.totalQty ? `(${cart?.totalQty})` : null} */}
+                      {cart?.totalQty ? `(${cart?.totalQty})` : null}
                     </span>
                   </span>
                 </Link>
