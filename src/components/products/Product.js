@@ -22,13 +22,18 @@ const Product = ({product}) => {
             >
             <Link href={product?.permalink ?? "/"}>
                 <Image
-                sourceUrl={img?.src ?? ""}
-                altText={img?.alt ?? ""}
+                src={img?.src ?? ""}
+                alt={img?.alt ?? ""}
                 title={product?.name ?? ""}
                 width={380}
                 height={380}
                 />
                 <h3 className='font-bold uppercase'>{product?.name}</h3>
+                <div
+                dangerouslySetInnerHTML={{
+                    __html: sanitize(product?.short_description ?? ""),
+                }}
+                />
                 <div
                 dangerouslySetInnerHTML={{
                     __html: sanitize(product?.price_html ?? ""),

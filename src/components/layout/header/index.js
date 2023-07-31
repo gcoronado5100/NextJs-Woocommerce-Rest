@@ -37,7 +37,7 @@ const Header = ({ header }) => {
                     height='86'
                   />
                 ) : (
-                  <TailwindIcon />
+                  ''
                 )}
               </Link>
               {/* <span>
