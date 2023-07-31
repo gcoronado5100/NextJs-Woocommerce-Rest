@@ -107,7 +107,7 @@ const Header = ({ header }) => {
                     <Bag className='mr-1 lg:mr-0' />
                     <span className='ml-1'>
                       Bag
-                      {cart?.totalQty ? `(${cart?.totalQty})` : null}
+                      {cart?.totalQty ? `(${cart?.totalQty})` : `(0)`}
                     </span>
                   </span>
                 </Link>

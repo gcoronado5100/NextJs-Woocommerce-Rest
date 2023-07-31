@@ -32,6 +32,7 @@ export const addToCart = ( productId, qty = 1, setCart, setIsAddedToCart, setLoa
 			}
 			setIsAddedToCart(true);
 			setLoading(false);
+
 			viewCart( setCart );
 		} )
 		.catch( err => {
