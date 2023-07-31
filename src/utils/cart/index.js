@@ -34,6 +34,7 @@ export const addToCart = ( productId, qty = 1, setCart, setIsAddedToCart, setLoa
 			setLoading(false);
 
 			viewCart( setCart );
+			console.log('hola')
 		} )
 		.catch( err => {
 			console.log( 'err', err );
